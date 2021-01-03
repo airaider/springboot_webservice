@@ -1,13 +1,15 @@
 # 스프링 부트와 AWS로 혼자 구현하는 웹 서비스
 
+<img src="/img/book.jpg"></img>
+
 이동욱 지음
 
 <br>
-
+****
 
 ## 1장 : 인텔리제이로 스프링 부트 시작하기
 
-<br>
+
 
 ### 1.1. 인텔리제이의 장점 (이클립스에 비해)
 
@@ -18,7 +20,7 @@
 	5. HTML, CSS, JS< XML 기능 지원
 	6. 자바, 스프링 부트 버전업에 맞춘 빠른 업데이트
 
-<br>
+
 
 ### 1.2. Gradle 설정
 
@@ -36,6 +38,8 @@
 
 
 
+
+
 ****
 
 
@@ -45,11 +49,69 @@
 
 ### 2.1. TDD 와 단위 테스트(unit test)
 
+####  Test Driven Development
+
+<img src="/img/tdd.png"></img>
+
+	1. 항상 실패하는 테스트를 먼저 작성하고 (Red)
+	2. 테스트가 통과하는 프로덕션 코드를 작성하고 (Green)
+	3. 테스트가 통과하면 프로덕션 코드를 리팩토링합니다 (Refactor)
 
 
 
+#### 단위 테스트
+
+	1. 빠른 피드백
+	2. 자동 검증
+	3. 시존 기능이 잘 작동되는 것을 보장
+	
+	* Java - JUnit
+	* DB - DBUnit
+	* C++ - CPPUnit
+	* .net - NUnit
 
 
+
+### 2.2 Application
+
+#### @SpringBootApplication
+
+스프링 부트의 자동 설정, 스프링 Bean 읽기와 생성을 모두 자동으로 설정
+
+@SpringBootApplication이 있는 위치부터 설정을 읽어가기 때문에 **프로젝트의 최상단**에 위치해햐 합니다
+
+
+
+#### 내장 WAS (Web Application Server)
+
+별도로 외부에 WAS를 두지 않고 애플리케이션을 실행할 때 재부에서 WAS를 실행
+
+서버에 톰캣(TomCat)을 설치할 필요가 없다
+
+스프링 부트로 만들어진 Jar 파일로 실행
+
+**언제 어디서나 같은 환경에서 스프링 부트를 배포**
+
+
+
+#### 코드 설명
+
+* HelloController
+
+>1. @RestController
+>   * 컨트롤러를 JSON을 반환하는 컨트롤러로 만들어 줌
+>   * @ResponseBody를 각 메소드마다 선언했던 것을 한번에 사용할 수 있게 해줌
+>2. @GetMapping
+>   * HTTP Method인 Get의 요청을 받을 수 있는 API를 만들어 줌
+>   * @RequestMapping(method = RequestMethod.GET)
+
+* HelloControllerTest
+
+> 1. 
+
+
+
+### 2.3 Lombok
 
 
 
@@ -89,119 +151,3 @@ You can export the current file by clicking **Export to disk** in the menu. You 
 
 You can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.
 
-
-# Synchronization
-
-Synchronization is one of the biggest features of StackEdit. It enables you to synchronize any file in your workspace with other files stored in your **Google Drive**, your **Dropbox** and your **GitHub** accounts. This allows you to keep writing on other devices, collaborate with people you share the file with, integrate easily into your workflow... The synchronization mechanism takes place every minute in the background, downloading, merging, and uploading file modifications.
-
-There are two types of synchronization and they can complement each other:
-
-- The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.
-
-> To start syncing your workspace, just sign in with Google in the menu.
-
-- The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.
-
-  > Before starting to sync files, you must link an account in the **Synchronize** sub-menu.
-
-## Open a file
-
-You can open a file from **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Open from**. Once opened in the workspace, any modification in the file will be automatically synced.
-
-## Save a file
-
-You can save any file of the workspace to **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Save on**. Even if a file in the workspace is already synced, you can save it to another location. StackEdit can sync one file with multiple locations and accounts.
-
-## Synchronize a file
-
-Once your file is linked to a synchronized location, StackEdit will periodically synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be resolved.
-
-If you just have modified your file and you want to force syncing, click the **Synchronize now** button in the navigation bar.
-
-> **Note:** The **Synchronize now** button is disabled if you have no file to synchronize.
-
-## Manage file synchronization
-
-Since one file can be synced with multiple locations, you can list and manage synchronized locations by clicking **File synchronization** in the **Synchronize** sub-menu. This allows you to list and remove synchronized locations that are linked to your file.
-
-
-# Publication
-
-Publishing in StackEdit makes it simple for you to publish online your files. Once you're happy with a file, you can publish it to different hosting platforms like **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **WordPress** and **Zendesk**. With [Handlebars templates](http://handlebarsjs.com/), you have full control over what you export.
-
-> Before starting to publish, you must link an account in the **Publish** sub-menu.
-
-## Publish a File
-
-You can publish your file by opening the **Publish** sub-menu and by clicking **Publish to**. For some locations, you can choose between the following formats:
-
-- Markdown: publish the Markdown text on a website that can interpret it (**GitHub** for instance),
-- HTML: publish the file converted to HTML via a Handlebars template (on a blog for example).
-
-## Update a publication
-
-After publishing, StackEdit keeps your file linked to that publication which makes it easy for you to re-publish it. Once you have modified your file and you want to update your publication, click on the **Publish now** button in the navigation bar.
-
-> **Note:** The **Publish now** button is disabled if your file has not been published yet.
-
-## Manage file publication
-
-Since one file can be published to multiple locations, you can list and manage publish locations by clicking **File publication** in the **Publish** sub-menu. This allows you to list and remove publication locations that are linked to your file.
-
-
-# Markdown extensions
-
-StackEdit extends the standard Markdown syntax by adding extra **Markdown extensions**, providing you with some nice features.
-
-> **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.
-
-
-## SmartyPants
-
-SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
-
-|                  | ASCII                           | HTML                          |
-| ---------------- | ------------------------------- | ----------------------------- |
-| Single backticks | `'Isn't this fun?'`             | 'Isn't this fun?'             |
-| Quotes           | `"Isn't this fun?"`             | "Isn't this fun?"             |
-| Dashes           | `-- is en-dash, --- is em-dash` | -- is en-dash, --- is em-dash |
-
-
-## KaTeX
-
-You can render LaTeX mathematical expressions using [KaTeX](https://khan.github.io/KaTeX/):
-
-The *Gamma function* satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral
-
-$$
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
-$$
-
-> You can find more information about **LaTeX** mathematical expressions [here](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
-
-
-## UML diagrams
-
-You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
-
-```mermaid
-sequenceDiagram
-Alice ->> Bob: Hello Bob, how are you?
-Bob-->>John: How about you John?
-Bob--x Alice: I am good thanks!
-Bob-x John: I am good thanks!
-Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
-
-Bob-->Alice: Checking with John...
-Alice->John: Yes... John, how are you?
-```
-
-And this will produce a flow chart:
-
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
