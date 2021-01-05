@@ -190,7 +190,27 @@
 
 ## 3장 : 스프링 부트에서 JPA로 데이터베이스 다뤄보자
 
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
+#### JPA(Java Persistence API) / ORM(Object Relational Mapping)
+
+	1. iBatis, myBatis는 Mapper를 활용하여 데이터베이스 쿼리 작성
+	2. SQL 다루는 시간이 너무 많다
+	3. 객체지향 프로그래밍 >>> 테이블 모델링
+	4. 패러다임 불일치
+	5. SQL에 종속적인 개발을 하지 않아도 된다
+	
+	* JPA <- Hibernate <- Spring Data JPA
+	* 구현체 교체의 용이성
+	* 저장소 교체의 용이성
+
+
+
+#### h2
+
+	1. 인메모리 관계형 데이터베이스
+	2. 프로젝트 의존성
+	3. 애플리케이션 재시작 마다 초기화 -> 테스트에 용이
+
+
 
 ## 4장 : 머스테치로 화면 구성하기
 
