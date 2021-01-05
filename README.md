@@ -212,6 +212,52 @@
 
 
 
+#### 코드 설명
+
+* Posts
+
+> 1. @Entity
+>
+>    - 테이블과 링크될 클래스
+>
+>    - 기본값으로 클래스의 카멜케이스 -> 언더스코어 네이밍으로 테이블 매칭
+>
+>      ex) SalesManager.java -> sales_manager table
+>
+> 2. @Id
+>
+>    - 해당 테이블의 PK 필드
+>
+> 3. @GeneratedValue
+>
+>    - PK의 생성 규칙
+>    - GenerationType.IDENTITY -> auto_increment
+>
+> 4. @Column
+>
+>    - 해당 클래스의 필드는 모두 칼럼
+>    - 기본값 외에 추가로 변경이 필요한 옵션이 있으면 사용
+
+
+#### Repository
+
+	1. iBatis, MyBatis에서 DAO로 불리는 DB Layer 접근자
+	2. Interface로 생성
+	3. JpaRepository<Entity 클래스, PK 타입> 을 통해 기본적인 CRUD 생성
+	4. Entity 클래스와 기본 Entity Repository는 함께 위치해야 한다
+	5. 도메인 패키지에서 함께 관리
+
+
+#### Setter 메소드를 무작정 추가하지 않는 이유
+
+	1. 인스턴스 값의 변경을 코드상 어디서 하는지 명확하지 않아서
+	2. 차후 기능 변경 시 복잡해짐
+	3. 값 변경이 필요하면 명확히 그 목적과 의도를 나타내는 메소드를 추가해야함
+	4. 생성자를 통해 최종값을 채운 후 DB에 삽입
+	5. @Builder
+
+
+
 ## 4장 : 머스테치로 화면 구성하기
 
 You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
