@@ -238,6 +238,18 @@
 >    - 해당 클래스의 필드는 모두 칼럼
 >    - 기본값 외에 추가로 변경이 필요한 옵션이 있으면 사용
 
+- PostsRepositoryTest
+
+> 1. @After
+>    - Junit에서 단위 테스트가 끝날 때마다 수행되는 메소드를 저장
+>    - 배포 전 전체 테스트를 수행할 때 테스트간 데이터 침범을 막기 위해 사용
+>    - H2에 담겨있는 데이터 초기화를 위해
+> 2. postsRepository.save
+>    - 테이블 posts에 insert/update 쿼리를 실행합니다
+>    - id 값이 있다면 update, 없다면 insert 쿼리를 실행
+> 3. postsRepository.findAll
+>    - 테이블 posts에 있는 모드 데이터를 조회해오는 메소드
+
 
 #### Repository
 
@@ -255,6 +267,38 @@
 	3. 값 변경이 필요하면 명확히 그 목적과 의도를 나타내는 메소드를 추가해야함
 	4. 생성자를 통해 최종값을 채운 후 DB에 삽입
 	5. @Builder
+
+
+
+#### API
+
+	1. Request 데이터를 받을 Dto
+	2. API 요청을 받은 Controller
+	3. 트랜잭션, 도메인 기능 간의 순서를 보장하는 Service
+
+
+
+<img src="/img/spring.png"></img>
+
+	* Web Layer
+		- @Controller, JSP/Freemarker 등의 뷰 템플렛 영역
+		- @Filter, 인터셉터, 컨트롤러 어드바이스(@ControllerAdvice) 외부 요청과 응답에 대한 전반적인 영역
+	* Service Layer
+		- @Service에 사용되는 서비스 영역
+		- Contoller와 Dao의 중간 영역에서 사용
+		- @Transactional이 사용되어야 하는 영역
+	* Repository Layer
+		- Database와 같이 데이터 저장소에 접근하는 영역
+		- Dao(Data Access Object) 영역
+	* Dtos
+		- Dto(Data Transfer Object)는 계층 간에 데이터 교환을 위한 객체
+	* Domain Model
+		- 개발 대상을 모든 사람이 동일한 관점에서 이해할 수 있고 공유할 수 있도록 단순화시킨 것
+		- @Entity
+		- VO
+		- 비즈니스 처리
+
+
 
 
 
