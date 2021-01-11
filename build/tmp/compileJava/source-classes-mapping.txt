@@ -23,3 +23,5 @@ com/project/springboot/Application.java
 com/project/springboot/web/dto/PostsSaveRequestDto.java
  com.project.springboot.web.dto.PostsSaveRequestDto
  com.project.springboot.web.dto.PostsSaveRequestDto$PostsSaveRequestDtoBuilder
+com/project/springboot/web/IndexController.java
+ com.project.springboot.web.IndexController
