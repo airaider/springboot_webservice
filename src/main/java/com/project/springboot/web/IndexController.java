@@ -32,5 +32,10 @@ public class IndexController {
         return "posts-save";
     }
 
+    @GetMapping("/posts/delete")
+    public String postsDelete(){
+
+        return "index";
+    }
 
 }

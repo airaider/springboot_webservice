@@ -11,19 +11,19 @@ com/project/springboot/web/dto/PostsUpdateRequestDto.java
 com/project/springboot/domain/posts/Posts.java
  com.project.springboot.domain.posts.Posts
  com.project.springboot.domain.posts.Posts$PostsBuilder
-com/project/springboot/web/PostsApiController.java
- com.project.springboot.web.PostsApiController
+com/project/springboot/Application.java
+ com.project.springboot.Application
 com/project/springboot/web/dto/PostsListResponseDto.java
  com.project.springboot.web.dto.PostsListResponseDto
-com/project/springboot/service/posts/PostsService.java
- com.project.springboot.service.posts.PostsService
+com/project/springboot/web/HelloController.java
+ com.project.springboot.web.HelloController
 com/project/springboot/domain/BaseTimeEntity.java
  com.project.springboot.domain.BaseTimeEntity
 com/project/springboot/web/dto/HelloResponseDto.java
  com.project.springboot.web.dto.HelloResponseDto
-com/project/springboot/web/HelloController.java
- com.project.springboot.web.HelloController
-com/project/springboot/Application.java
- com.project.springboot.Application
+com/project/springboot/service/posts/PostsService.java
+ com.project.springboot.service.posts.PostsService
 com/project/springboot/web/IndexController.java
  com.project.springboot.web.IndexController
+com/project/springboot/web/PostsApiController.java
+ com.project.springboot.web.PostsApiController
