@@ -1,5 +1,9 @@
 package com.project.springboot.web;
 
+import javax.servlet.http.HttpSession;
+
+import com.project.springboot.config.auth.dto.LoginUser;
+import com.project.springboot.config.auth.dto.SessionUser;
 import com.project.springboot.service.posts.PostsService;
 import com.project.springboot.web.dto.PostsResponseDto;
 import lombok.RequiredArgsConstructor;
@@ -15,27 +19,24 @@ public class IndexController {
     private final PostsService postsService;
 
     @GetMapping("/")
-    public String index(Model model){
+    public String index(Model model, @LoginUser SessionUser user) {
         model.addAttribute("posts", postsService.findAllDesc());
+        if (user != null) {
+            model.addAttribute("name", user.getName());
+        }
         return "index";
-    }
-
-    @GetMapping("/posts/update/{id}")
-    public String postsUpdate(@PathVariable Long id, Model model){
-        PostsResponseDto dto = postsService.findById(id);
-        model.addAttribute("post", dto);
-        return "posts-update";
     }
 
     @GetMapping("/posts/save")
-    public String postsSave(){
+    public String postsSave() {
         return "posts-save";
     }
 
-    @GetMapping("/posts/delete")
-    public String postsDelete(){
+    @GetMapping("/posts/update/{id}")
+    public String postsUpdate(@PathVariable Long id, Model model) {
+        PostsResponseDto dto = postsService.findById(id);
+        model.addAttribute("post", dto);
 
-        return "index";
+        return "posts-update";
     }
-
 }

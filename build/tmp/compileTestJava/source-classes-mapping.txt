@@ -1,10 +1,10 @@
-com/project/springboot/web/dto/HelloResponseDtoTest.java
- com.project.springboot.web.dto.HelloResponseDtoTest
-com/project/springboot/web/HelloControllerTest.java
- com.project.springboot.web.HelloControllerTest
-com/project/springboot/web/PostsApiControllerTest.java
- com.project.springboot.web.PostsApiControllerTest
-com/project/springboot/domain/posts/PostsRepositoryTest.java
- com.project.springboot.domain.posts.PostsRepositoryTest
 com/project/springboot/web/IndexControllerTest.java
  com.project.springboot.web.IndexControllerTest
+com/project/springboot/web/PostsApiControllerTest.java
+ com.project.springboot.web.PostsApiControllerTest
+com/project/springboot/web/dto/HelloResponseDtoTest.java
+ com.project.springboot.web.dto.HelloResponseDtoTest
+com/project/springboot/domain/posts/PostsRepositoryTest.java
+ com.project.springboot.domain.posts.PostsRepositoryTest
+com/project/springboot/web/HelloControllerTest.java
+ com.project.springboot.web.HelloControllerTest
