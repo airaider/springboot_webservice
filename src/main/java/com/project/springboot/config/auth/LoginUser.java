@@ -1,4 +1,4 @@
-package com.project.springboot.config.auth.dto;
+package com.project.springboot.config.auth;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

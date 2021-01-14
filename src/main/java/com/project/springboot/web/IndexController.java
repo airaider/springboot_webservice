@@ -1,8 +1,6 @@
 package com.project.springboot.web;
 
-import javax.servlet.http.HttpSession;
-
-import com.project.springboot.config.auth.dto.LoginUser;
+import com.project.springboot.config.auth.LoginUser;
 import com.project.springboot.config.auth.dto.SessionUser;
 import com.project.springboot.service.posts.PostsService;
 import com.project.springboot.web.dto.PostsResponseDto;

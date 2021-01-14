@@ -1,5 +1,6 @@
-package com.project.springboot.config.auth.dto;
+package com.project.springboot.config.auth;
 
+import com.project.springboot.config.auth.dto.SessionUser;
 import lombok.RequiredArgsConstructor;
 import org.springframework.core.MethodParameter;
 import org.springframework.stereotype.Component;
